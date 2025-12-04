@@ -43,13 +43,23 @@
         android:background="@color/card_background">
 
         <Button
+            android:id="@+id/btnAll"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="All"
+            android:textSize="12sp"
+            android:backgroundTint="@color/accent"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
             android:id="@+id/btnUpcoming"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
             android:text="@string/status_upcoming"
             android:textSize="12sp"
-            android:backgroundTint="@color/accent"
+            android:backgroundTint="@color/text_secondary"
             android:layout_marginEnd="8dp"/>
 
         <Button
@@ -59,336 +69,27 @@
             android:layout_weight="1"
             android:text="@string/status_completed"
             android:textSize="12sp"
-            android:backgroundTint="@color/primary_light"
-            android:layout_marginEnd="8dp"/>
-
-        <Button
-            android:id="@+id/btnCancelled"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:text="@string/status_cancelled"
-            android:textSize="12sp"
             android:backgroundTint="@color/text_secondary"/>
     </LinearLayout>
 
-    <!-- Appointments List -->
-    <ScrollView
+    <!-- Empty State -->
+    <TextView
+        android:id="@+id/tvEmpty"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:text="No bookings yet"
+        android:textSize="16sp"
+        android:textColor="@color/text_secondary"
+        android:gravity="center"
+        android:padding="32dp"
+        android:visibility="gone"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <!-- Appointment Card 1 - Upcoming -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <!-- Status Badge -->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/status_upcoming"
-                        android:textSize="10sp"
-                        android:textColor="@color/text_on_primary"
-                        android:background="@color/status_upcoming"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="4dp"
-                        android:layout_marginBottom="12dp"/>
-
-                    <!-- Barber & Date Row -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical">
-
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@mipmap/ic_launcher_round"
-                            android:contentDescription="Barber"/>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:layout_marginStart="12dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Mas Andi"
-                                android:textSize="16sp"
-                                android:textColor="@color/text_primary"
-                                android:textStyle="bold"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Haircut, Shaving"
-                                android:textSize="12sp"
-                                android:textColor="@color/text_secondary"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:gravity="end">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="15 Dec 2024"
-                                android:textSize="12sp"
-                                android:textColor="@color/text_primary"
-                                android:textStyle="bold"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="10:00"
-                                android:textSize="12sp"
-                                android:textColor="@color/text_secondary"/>
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <!-- Price & Action -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginTop="12dp">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Rp 50.000"
-                            android:textSize="16sp"
-                            android:textColor="@color/accent"
-                            android:textStyle="bold"/>
-
-                        <Button
-                            android:id="@+id/btnCancel1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="36dp"
-                            android:text="@string/cancel"
-                            android:textSize="12sp"
-                            android:backgroundTint="@color/status_cancelled"/>
-                    </LinearLayout>
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Appointment Card 2 - Completed -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <!-- Status Badge -->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/status_completed"
-                        android:textSize="10sp"
-                        android:textColor="@color/text_on_primary"
-                        android:background="@color/status_completed"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="4dp"
-                        android:layout_marginBottom="12dp"/>
-
-                    <!-- Barber & Date Row -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical">
-
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@mipmap/ic_launcher_round"
-                            android:contentDescription="Barber"/>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:layout_marginStart="12dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Mas Budi"
-                                android:textSize="16sp"
-                                android:textColor="@color/text_primary"
-                                android:textStyle="bold"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Haircut, Hair Wash"
-                                android:textSize="12sp"
-                                android:textColor="@color/text_secondary"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:gravity="end">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="10 Dec 2024"
-                                android:textSize="12sp"
-                                android:textColor="@color/text_primary"
-                                android:textStyle="bold"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="14:00"
-                                android:textSize="12sp"
-                                android:textColor="@color/text_secondary"/>
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <!-- Price -->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Rp 55.000"
-                        android:textSize="16sp"
-                        android:textColor="@color/accent"
-                        android:textStyle="bold"
-                        android:layout_marginTop="12dp"/>
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Appointment Card 3 - Cancelled -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:alpha="0.7">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <!-- Status Badge -->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/status_cancelled"
-                        android:textSize="10sp"
-                        android:textColor="@color/text_on_primary"
-                        android:background="@color/status_cancelled"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="4dp"
-                        android:layout_marginBottom="12dp"/>
-
-                    <!-- Barber & Date Row -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical">
-
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@mipmap/ic_launcher_round"
-                            android:contentDescription="Barber"/>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:layout_marginStart="12dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Mas Chandra"
-                                android:textSize="16sp"
-                                android:textColor="@color/text_primary"
-                                android:textStyle="bold"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Hair Coloring"
-                                android:textSize="12sp"
-                                android:textColor="@color/text_secondary"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:gravity="end">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="5 Dec 2024"
-                                android:textSize="12sp"
-                                android:textColor="@color/text_primary"
-                                android:textStyle="bold"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="09:00"
-                                android:textSize="12sp"
-                                android:textColor="@color/text_secondary"/>
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <!-- Price -->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Rp 100.000"
-                        android:textSize="16sp"
-                        android:textColor="@color/text_secondary"
-                        android:textStyle="bold"
-                        android:layout_marginTop="12dp"/>
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-    </ScrollView>
+    <!-- RecyclerView for Bookings -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:clipToPadding="false"/>
 
 </LinearLayout>
