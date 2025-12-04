@@ -44,4 +44,7 @@
     <string name="status_upcoming">Upcoming</string>
     <string name="status_completed">Completed</string>
     <string name="status_cancelled">Cancelled</string>
+
+    <!-- Splash -->
+    <string name="tagline">Book Your Style</string>
 </resources>
