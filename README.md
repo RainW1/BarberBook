@@ -471,9 +471,9 @@ The app comes pre-loaded with:
 
 | Photo | Name | Role | Responsibilities |
 |-------|------|------|------------------|
-| 👤 | [Person 1] | UI/UX & Integration | Layouts, Java Integration, Documentation |
-| 👤 | [Person 2] | Backend Developer | Database, Models, CRUD Operations |
-| 👤 | [Person 3] | Logic Developer | Activities, Business Logic, Navigation |
+| 👤 | Reza | UI/UX & Integration | Layouts, Java Integration, Documentation |
+| 👤 | Min | Backend Developer | Database, Models, CRUD Operations |
+| 👤 | Nasyith | Logic Developer | Activities, Business Logic, Navigation |
 
 ---
 
