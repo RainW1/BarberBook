@@ -64,6 +64,26 @@
             android:name=".activities.ProfileActivity"
             android:exported="false" />
 
+        <!-- Admin Login Activity -->
+        <activity
+            android:name=".activities.AdminLoginActivity"
+            android:exported="false" />
+
+        <!-- Admin Dashboard Activity -->
+        <activity
+            android:name=".activities.AdminDashboardActivity"
+            android:exported="false" />
+
+        <!-- Edit Profile Activity -->
+        <activity
+            android:name=".activities.EditProfileActivity"
+            android:exported="false" />
+
+        <!-- Manage Barbers Activity -->
+        <activity
+            android:name=".activities.ManageBarbersActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

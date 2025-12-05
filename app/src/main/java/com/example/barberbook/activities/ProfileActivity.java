@@ -64,9 +64,7 @@ public class ProfileActivity extends AppCompatActivity {
         btnEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: Implement edit profile
-                android.widget.Toast.makeText(ProfileActivity.this,
-                        "Edit profile coming soon!", android.widget.Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(ProfileActivity.this, EditProfileActivity.class));
             }
         });
 

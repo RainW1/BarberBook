@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="@color/primary">
+
+    <!-- Admin Icon -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="👨‍💼"
+        android:textSize="64sp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Admin Panel"
+        android:textSize="28sp"
+        android:textColor="@color/text_on_primary"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BarberBook Management"
+        android:textSize="14sp"
+        android:textColor="@color/accent"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Username Input -->
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:hint="Username"
+        android:textColorHint="@color/text_hint"
+        android:textColor="@color/text_primary"
+        android:background="@drawable/spinner_background"
+        android:padding="16dp"
+        android:inputType="text"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Password Input -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:hint="Password"
+        android:textColorHint="@color/text_hint"
+        android:textColor="@color/text_primary"
+        android:background="@drawable/spinner_background"
+        android:padding="16dp"
+        android:inputType="textPassword"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Login as Admin"
+        android:textSize="16sp"
+        android:backgroundTint="@color/accent"/>
+
+    <!-- Back to User Login -->
+    <TextView
+        android:id="@+id/tvBackToUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="← Back to User Login"
+        android:textSize="14sp"
+        android:textColor="@color/text_on_primary"
+        android:layout_marginTop="24dp"
+        android:padding="8dp"/>
+
+</LinearLayout>

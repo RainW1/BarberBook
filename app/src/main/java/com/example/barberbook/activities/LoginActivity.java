@@ -8,7 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.barberbook.activities.AdminLoginActivity;
 import com.example.barberbook.R;
 import com.example.barberbook.database.DatabaseHelper;
 import com.example.barberbook.models.User;
@@ -51,6 +51,15 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+            }
+        });
+
+        // Admin login link
+        TextView tvAdminLogin = findViewById(R.id.tvAdminLogin);
+        tvAdminLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, AdminLoginActivity.class));
             }
         });
     }

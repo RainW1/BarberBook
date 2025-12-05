@@ -365,4 +365,138 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return count;
     }
+
+    // ==================== ADMIN OPERATIONS ====================
+
+    public List<Booking> getAllBookings() {
+        List<Booking> bookings = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(TABLE_BOOKINGS, null, null, null, null, null, COL_ID + " DESC");
+
+        if (cursor.moveToFirst()) {
+            do {
+                Booking booking = new Booking();
+                booking.setId(cursor.getInt(cursor.getColumnIndexOrThrow(COL_ID)));
+                booking.setUserId(cursor.getInt(cursor.getColumnIndexOrThrow(COL_USER_ID)));
+                booking.setBarberId(cursor.getInt(cursor.getColumnIndexOrThrow(COL_BARBER_ID)));
+                booking.setBarberName(cursor.getString(cursor.getColumnIndexOrThrow(COL_BARBER_NAME)));
+                booking.setServices(cursor.getString(cursor.getColumnIndexOrThrow(COL_SERVICES)));
+                booking.setDate(cursor.getString(cursor.getColumnIndexOrThrow(COL_DATE)));
+                booking.setTime(cursor.getString(cursor.getColumnIndexOrThrow(COL_TIME)));
+                booking.setTotalPrice(cursor.getInt(cursor.getColumnIndexOrThrow(COL_TOTAL_PRICE)));
+                booking.setStatus(cursor.getString(cursor.getColumnIndexOrThrow(COL_STATUS)));
+                booking.setNotes(cursor.getString(cursor.getColumnIndexOrThrow(COL_NOTES)));
+                bookings.add(booking);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return bookings;
+    }
+
+    public int completeBooking(int bookingId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_STATUS, "Completed");
+        int result = db.update(TABLE_BOOKINGS, values, COL_ID + "=?",
+                new String[]{String.valueOf(bookingId)});
+        db.close();
+        return result;
+    }
+
+    public int getAllBookingsCountByStatus(String status) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor;
+
+        if (status.equals("All")) {
+            cursor = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_BOOKINGS, null);
+        } else {
+            cursor = db.query(TABLE_BOOKINGS, new String[]{"COUNT(*)"},
+                    COL_STATUS + "=?", new String[]{status}, null, null, null);
+        }
+
+        int count = 0;
+        if (cursor.moveToFirst()) {
+            count = cursor.getInt(0);
+        }
+        cursor.close();
+        db.close();
+        return count;
+    }
+
+    public String getUserNameById(int userId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(TABLE_USERS, new String[]{COL_FULL_NAME},
+                COL_ID + "=?", new String[]{String.valueOf(userId)},
+                null, null, null);
+
+        String name = "Unknown";
+        if (cursor.moveToFirst()) {
+            name = cursor.getString(0);
+        }
+        cursor.close();
+        db.close();
+        return name;
+    }
+
+    // ==================== UPDATE USER OPERATIONS ====================
+
+    public int updateUserProfile(int userId, String fullName, String phone, String gender) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_FULL_NAME, fullName);
+        values.put(COL_PHONE, phone);
+        values.put(COL_GENDER, gender);
+        int result = db.update(TABLE_USERS, values, COL_ID + "=?",
+                new String[]{String.valueOf(userId)});
+        db.close();
+        return result;
+    }
+
+    public int updateUserPassword(int userId, String newPassword) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_PASSWORD, newPassword);
+        int result = db.update(TABLE_USERS, values, COL_ID + "=?",
+                new String[]{String.valueOf(userId)});
+        db.close();
+        return result;
+    }
+
+    public boolean verifyPassword(int userId, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(TABLE_USERS, new String[]{COL_ID},
+                COL_ID + "=? AND " + COL_PASSWORD + "=?",
+                new String[]{String.valueOf(userId), password},
+                null, null, null);
+        boolean valid = cursor.getCount() > 0;
+        cursor.close();
+        db.close();
+        return valid;
+    }
+
+    // ==================== BARBER MANAGEMENT ====================
+
+    public int updateBarberAvailability(int barberId, boolean available) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_AVAILABLE, available ? 1 : 0);
+        int result = db.update(TABLE_BARBERS, values, COL_ID + "=?",
+                new String[]{String.valueOf(barberId)});
+        db.close();
+        return result;
+    }
+
+    public int updateBarberInfo(int barberId, String name, double rating, int experience, boolean available) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_NAME, name);
+        values.put(COL_RATING, rating);
+        values.put(COL_EXPERIENCE, experience);
+        values.put(COL_AVAILABLE, available ? 1 : 0);
+        int result = db.update(TABLE_BARBERS, values, COL_ID + "=?",
+                new String[]{String.valueOf(barberId)});
+        db.close();
+        return result;
+    }
 }

@@ -20,7 +20,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@android:drawable/ic_menu_revert"
-            android:contentDescription="@string/back"/>
+            android:contentDescription="Back"/>
 
         <TextView
             android:layout_width="0dp"
@@ -45,205 +45,45 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Barber Section -->
+            <!-- Section: Choose Barber -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Choose your barber"
+                android:text="Choose Your Barber"
                 android:textSize="16sp"
-                android:textColor="@color/text_secondary"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold"
                 android:layout_marginBottom="12dp"/>
 
-            <!-- Barber 1 -->
-            <androidx.cardview.widget.CardView
+            <!-- Barbers Container (Dynamic) -->
+            <LinearLayout
+                android:id="@+id/layoutBarbers"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp">
+                android:orientation="vertical"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="16dp"
-                    android:gravity="center_vertical">
-
-                    <RadioButton
-                        android:id="@+id/rbBarber1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:buttonTint="@color/accent"/>
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@mipmap/ic_launcher_round"
-                        android:layout_marginStart="8dp"
-                        android:contentDescription="Barber"/>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:layout_marginStart="12dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Mas Andi"
-                            android:textSize="16sp"
-                            android:textColor="@color/text_primary"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="⭐ 4.8 • 5 years exp"
-                            android:textSize="12sp"
-                            android:textColor="@color/text_secondary"/>
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Available"
-                        android:textSize="12sp"
-                        android:textColor="@color/status_upcoming"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Barber 2 -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="16dp"
-                    android:gravity="center_vertical">
-
-                    <RadioButton
-                        android:id="@+id/rbBarber2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:buttonTint="@color/accent"/>
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@mipmap/ic_launcher_round"
-                        android:layout_marginStart="8dp"
-                        android:contentDescription="Barber"/>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:layout_marginStart="12dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Mas Budi"
-                            android:textSize="16sp"
-                            android:textColor="@color/text_primary"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="⭐ 4.5 • 3 years exp"
-                            android:textSize="12sp"
-                            android:textColor="@color/text_secondary"/>
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Available"
-                        android:textSize="12sp"
-                        android:textColor="@color/status_upcoming"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Barber 3 -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="16dp"
-                    android:gravity="center_vertical">
-
-                    <RadioButton
-                        android:id="@+id/rbBarber3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:buttonTint="@color/accent"/>
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@mipmap/ic_launcher_round"
-                        android:layout_marginStart="8dp"
-                        android:contentDescription="Barber"/>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:layout_marginStart="12dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Mas Chandra"
-                            android:textSize="16sp"
-                            android:textColor="@color/text_primary"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="⭐ 4.9 • 7 years exp"
-                            android:textSize="12sp"
-                            android:textColor="@color/text_secondary"/>
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Busy"
-                        android:textSize="12sp"
-                        android:textColor="@color/status_cancelled"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Date Section -->
+            <!-- Section: Select Date -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Select Date"
                 android:textSize="16sp"
-                android:textColor="@color/text_secondary"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp"
                 android:layout_marginBottom="12dp"/>
 
+            <!-- Date Picker Card -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/layoutDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp">
+                android:layout_marginBottom="16dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
 
                 <LinearLayout
-                    android:id="@+id/layoutDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -263,132 +103,152 @@
                         android:layout_weight="1"
                         android:text="Tap to select date"
                         android:textSize="16sp"
-                        android:textColor="@color/text_primary"
+                        android:textColor="@color/text_secondary"
                         android:layout_marginStart="12dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="▼"
+                        android:textSize="14sp"
                         android:textColor="@color/text_secondary"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Time Slots Section -->
+            <!-- Section: Select Time -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/select_time"
+                android:text="Select Time"
                 android:textSize="16sp"
-                android:textColor="@color/text_secondary"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold"
                 android:layout_marginBottom="12dp"/>
 
             <!-- Time Slots Grid -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="8dp">
+                android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/btnTime1"
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:text="09:00"
-                    android:backgroundTint="@color/card_background"
-                    android:textColor="@color/text_primary"
-                    android:layout_marginEnd="8dp"/>
+                <!-- Row 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
 
-                <Button
-                    android:id="@+id/btnTime2"
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:text="10:00"
-                    android:backgroundTint="@color/card_background"
-                    android:textColor="@color/text_primary"
-                    android:layout_marginEnd="8dp"/>
+                    <Button
+                        android:id="@+id/btnTime1"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:text="09:00"
+                        android:textSize="14sp"
+                        android:backgroundTint="@color/card_background"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginEnd="8dp"/>
 
-                <Button
-                    android:id="@+id/btnTime3"
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:text="11:00"
-                    android:backgroundTint="@color/card_background"
-                    android:textColor="@color/text_primary"/>
-            </LinearLayout>
+                    <Button
+                        android:id="@+id/btnTime2"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:text="10:00"
+                        android:textSize="14sp"
+                        android:backgroundTint="@color/card_background"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginEnd="8dp"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="8dp">
+                    <Button
+                        android:id="@+id/btnTime3"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:text="11:00"
+                        android:textSize="14sp"
+                        android:backgroundTint="@color/card_background"
+                        android:textColor="@color/text_primary"/>
+                </LinearLayout>
 
-                <Button
-                    android:id="@+id/btnTime4"
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:text="13:00"
-                    android:backgroundTint="@color/card_background"
-                    android:textColor="@color/text_primary"
-                    android:layout_marginEnd="8dp"/>
+                <!-- Row 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
 
-                <Button
-                    android:id="@+id/btnTime5"
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:text="14:00"
-                    android:backgroundTint="@color/card_background"
-                    android:textColor="@color/text_primary"
-                    android:layout_marginEnd="8dp"/>
+                    <Button
+                        android:id="@+id/btnTime4"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:text="13:00"
+                        android:textSize="14sp"
+                        android:backgroundTint="@color/card_background"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginEnd="8dp"/>
 
-                <Button
-                    android:id="@+id/btnTime6"
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:text="15:00"
-                    android:backgroundTint="@color/card_background"
-                    android:textColor="@color/text_primary"/>
-            </LinearLayout>
+                    <Button
+                        android:id="@+id/btnTime5"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:text="14:00"
+                        android:textSize="14sp"
+                        android:backgroundTint="@color/card_background"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginEnd="8dp"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/btnTime6"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:text="15:00"
+                        android:textSize="14sp"
+                        android:backgroundTint="@color/card_background"
+                        android:textColor="@color/text_primary"/>
+                </LinearLayout>
 
-                <Button
-                    android:id="@+id/btnTime7"
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:text="16:00"
-                    android:backgroundTint="@color/card_background"
-                    android:textColor="@color/text_primary"
-                    android:layout_marginEnd="8dp"/>
+                <!-- Row 3 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/btnTime8"
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:text="17:00"
-                    android:backgroundTint="@color/card_background"
-                    android:textColor="@color/text_primary"
-                    android:layout_marginEnd="8dp"/>
+                    <Button
+                        android:id="@+id/btnTime7"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:text="16:00"
+                        android:textSize="14sp"
+                        android:backgroundTint="@color/card_background"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginEnd="8dp"/>
 
-                <Button
-                    android:id="@+id/btnTime9"
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:text="18:00"
-                    android:backgroundTint="@color/card_background"
-                    android:textColor="@color/text_primary"/>
+                    <Button
+                        android:id="@+id/btnTime8"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:text="17:00"
+                        android:textSize="14sp"
+                        android:backgroundTint="@color/card_background"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginEnd="8dp"/>
+
+                    <Button
+                        android:id="@+id/btnTime9"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:text="18:00"
+                        android:textSize="14sp"
+                        android:backgroundTint="@color/card_background"
+                        android:textColor="@color/text_primary"/>
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>
@@ -406,7 +266,7 @@
             android:id="@+id/btnNext"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="Next"
+            android:text="@string/next"
             android:textSize="16sp"
             android:backgroundTint="@color/accent"/>
     </LinearLayout>

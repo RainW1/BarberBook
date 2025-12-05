@@ -100,6 +100,18 @@
                 android:text="@string/register"
                 android:textColor="@color/accent"
                 android:textStyle="bold"/>
+
+            <!-- Admin Login Link -->
+            <TextView
+                android:id="@+id/tvAdminLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Admin Login →"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="32dp"
+                android:padding="8dp"/>
+
         </LinearLayout>
 
     </LinearLayout>
