@@ -482,6 +482,7 @@ The app comes pre-loaded with:
 This project was created for educational purposes as part of the **Wireless and Mobile Programming** course.
 
 **Institution:** President University 
+
 **Study Program:** Informatics  
 **Semester:** 2024/2025
 
